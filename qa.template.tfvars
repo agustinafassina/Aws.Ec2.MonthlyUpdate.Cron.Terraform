@@ -5,3 +5,7 @@ region = ""
 instance_public_ip = ""
 user_instance = "ec2-user"
 access_key_path = ""
+
+# Script settings
+initial_script_path = "path/initial-script.sh"
+update_script_path = "path/update-instance.sh"

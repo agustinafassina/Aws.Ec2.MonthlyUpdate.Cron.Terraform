@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "null_resource" "update_existing_instance" {
   provisioner "file" {
-    source      = "script_ssh"
+    source      = var.initial_script_path
     destination = "/tmp/initial-script.sh"
 
     connection {
@@ -17,7 +17,7 @@ resource "null_resource" "update_existing_instance" {
   }
 
   provisioner "file" {
-    source      = "script_ssh"
+    source      = var.update_script_path
     destination = "/tmp/update-instance.sh"
 
     connection {

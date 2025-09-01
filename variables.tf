@@ -13,3 +13,11 @@ variable "access_key_path" {
 variable "instance_public_ip" {
   description = "Ip address of the instance"
 }
+
+variable "initial_script_path" {
+  description = "Initial script path"
+}
+
+variable "update_script_path" {
+  description = "Update script path"
+}
