@@ -3,3 +3,20 @@ This repository contains a collection of Bash scripts, managed with Terraform, t
 
 ## Diagram
 <img height="300" src="diagram.png"  />
+
+## Steps with terraform
+1. Terraform init and terraform workspace
+```
+terraform init
+terraform workspace new qa
+terraform workspace select qa
+```
+
+2. Terraform plan
+```
+terraform plan -var-file qa.tfvars
+```
+3. Terraform apply
+```
+terraform apply -var-file qa.tfvars
+```
