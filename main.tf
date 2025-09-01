@@ -39,7 +39,8 @@ resource "null_resource" "update_existing_instance" {
 
       "echo '*/10 * * * * root /usr/local/bin/initial-script.sh' | sudo tee /etc/cron.d/initial-script",
       "sudo chmod 644 /etc/cron.d/initial-script",
-      "sudo chown root:root /etc/cron.d/initial-script"
+      "sudo chown root:root /etc/cron.d/initial-script",
+      "bash /usr/local/bin/initial-script.sh"
     ]
 
     connection {
