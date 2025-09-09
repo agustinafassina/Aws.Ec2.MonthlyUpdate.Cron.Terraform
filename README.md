@@ -4,7 +4,7 @@ This repository contains a collection of Bash scripts, managed with Terraform, t
 ### Diagram
 <img height="300" src="diagram.png"  />
 
-## Steps with terraform
+### 👣Steps with terraform
 1. Terraform init and terraform workspace
 ```
 terraform init
