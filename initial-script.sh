@@ -1,7 +1,7 @@
 #!/bin/bash
 timeout_duration="5m"
 
-timeout $timeout_duration bash update-instance.sh &
+timeout $timeout_duration bash /usr/local/bin/update-instance.sh &
 update_instance=$!
 
 # Wait for the script to finish
