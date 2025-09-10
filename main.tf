@@ -32,12 +32,11 @@ resource "null_resource" "update_existing_instance" {
   provisioner "remote-exec" {
     inline = [
       "#!/bin/bash",
-
       "sudo mv /tmp/initial-script.sh /usr/local/bin/initial-script.sh",
       "sudo mv /tmp/update-instance.sh /usr/local/bin/update-instance.sh",
       "sudo chmod +x /usr/local/bin/initial-script.sh",
 
-      "echo '*/10 * * * * root /usr/local/bin/initial-script.sh' | sudo tee /etc/cron.d/initial-script",
+      "echo '*/5 * * * * root /bin/bash /usr/local/bin/initial-script.sh > /var/log/initial-script.log 2>&1' | sudo tee /etc/cron.d/initial-script",
       "sudo chmod 644 /etc/cron.d/initial-script",
       "sudo chown root:root /etc/cron.d/initial-script",
       "bash /usr/local/bin/initial-script.sh"
