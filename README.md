@@ -5,7 +5,7 @@ Run a script every first day of the month at 00:00 (0 0 1 * * root /bin/bash /us
 ### Diagram
 <img height="300" src="diagram.png"  />
 
-### 👣Steps with terraform
+### 👣 Terraform steps
 1. Terraform init and terraform workspace
 ```
 terraform init
