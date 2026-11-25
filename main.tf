@@ -3,6 +3,12 @@ provider "aws" {
 }
 
 resource "null_resource" "update_existing_instance" {
+  # Re-run the provisioners whenever any of the scripts change
+  triggers = {
+    initial_script = filemd5(var.initial_script_path)
+    update_script  = filemd5(var.update_script_path)
+  }
+
   provisioner "file" {
     source      = var.initial_script_path
     destination = "/tmp/initial-script.sh"
